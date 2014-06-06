@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+
+    "name": "Kuttimama",
+    "description": "This extension fetch images from Kuttimama.com",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://facebook.com/*"],
+            "css": ["mystyle.css"],
+            "js": ["jquery.min.js", "jquery.fancybox-1.3.4.pack.js", "myscript.js"],
+            "run_at" : "document_end",
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "http://localhost:3000/",
+        "activeTab"
+    ]
+}
